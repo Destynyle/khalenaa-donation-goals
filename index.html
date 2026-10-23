@@ -10,31 +10,31 @@
 <link href="https://fonts.googleapis.com/css2?family=Anton&family=Outfit:wght@500;700;800&display=swap" rel="stylesheet">
 <style>
   :root {
-    --paper: #efe4d6;
-    --paper-2: #e6d5c3;
-    --ink: #2a3a1f;
-    --green: #2f5a1e;
-    --red: #c3262b;
-    --line: #c99a8e;
-    --muted: #6b5a4c;
+    --paper: #ffffff;
+    --paper-2: #f3f7f4;
+    --ink: #111111;
+    --green: #149954;
+    --red: #e4312b;
+    --line: #d6d6d6;
+    --muted: #555555;
   }
   @media (prefers-color-scheme: dark) {
     :root {
-      --paper: #1c1714;
-      --paper-2: #26201b;
-      --ink: #efe4d6;
-      --green: #8cc46a;
-      --red: #ff5a5f;
-      --line: #4a3a33;
-      --muted: #b3a393;
+      --paper: #0d0d0d;
+      --paper-2: #161a17;
+      --ink: #ffffff;
+      --green: #2fc37a;
+      --red: #ff4a44;
+      --line: #2e2e2e;
+      --muted: #a8a8a8;
     }
   }
   * { box-sizing: border-box; }
   body {
     margin: 0;
-    background:
-      radial-gradient(ellipse at top left, color-mix(in srgb, var(--red) 14%, transparent), transparent 60%),
-      var(--paper);
+    background: var(--paper);
+    border-top: 10px solid #111;
+    box-shadow: inset 0 10px 0 #fff, inset 0 20px 0 #149954;
     color: var(--ink);
     font-family: "Outfit", system-ui, sans-serif;
     min-height: 100vh;
@@ -61,7 +61,7 @@
     text-transform: uppercase;
     letter-spacing: .01em;
   }
-  h1 small { display: block; font-size: .5em; color: var(--green); margin-top: 6px; }
+  h1 small { display: block; font-size: .5em; color: var(--ink); margin-top: 6px; }
   .event { margin: 14px 0 0; color: var(--muted); font-size: 1rem; }
   .event strong { color: var(--ink); }
 
