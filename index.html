@@ -1,0 +1,165 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Khalenaa — Donation Goals</title>
+<meta name="description" content="Liste des donation goals de Khalenaa pour le live caritatif Live4Palestine — People of Gaza.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Outfit:wght@500;700;800&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --paper: #efe4d6;
+    --paper-2: #e6d5c3;
+    --ink: #2a3a1f;
+    --green: #2f5a1e;
+    --red: #c3262b;
+    --line: #c99a8e;
+    --muted: #6b5a4c;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --paper: #1c1714;
+      --paper-2: #26201b;
+      --ink: #efe4d6;
+      --green: #8cc46a;
+      --red: #ff5a5f;
+      --line: #4a3a33;
+      --muted: #b3a393;
+    }
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background:
+      radial-gradient(ellipse at top left, color-mix(in srgb, var(--red) 14%, transparent), transparent 60%),
+      var(--paper);
+    color: var(--ink);
+    font-family: "Outfit", system-ui, sans-serif;
+    min-height: 100vh;
+  }
+  main { max-width: 980px; margin: 0 auto; padding: 32px 16px 48px; }
+
+  header { text-align: center; margin-bottom: 28px; }
+  .flag { display: inline-flex; height: 22px; width: 36px; border-radius: 3px; overflow: hidden; position: relative; margin-bottom: 10px; box-shadow: 0 1px 3px rgba(0,0,0,.25); }
+  .flag span { flex: 1; }
+  .flag .b { position: absolute; inset: 0; display: flex; flex-direction: column; }
+  .flag .b i { flex: 1; }
+  .flag .b i:nth-child(1) { background: #111; }
+  .flag .b i:nth-child(2) { background: #fff; }
+  .flag .b i:nth-child(3) { background: #149954; }
+  .flag::after { content: ""; position: absolute; left: 0; top: 0; bottom: 0; width: 45%; background: #e4312b; clip-path: polygon(0 0, 100% 50%, 0 100%); }
+  .tagline { font-weight: 800; color: var(--green); letter-spacing: .02em; text-transform: uppercase; font-size: .85rem; margin: 0 0 6px; }
+  h1 {
+    font-family: "Anton", Impact, sans-serif;
+    font-weight: 400;
+    font-size: clamp(2.6rem, 9vw, 5rem);
+    line-height: .95;
+    margin: 0;
+    color: var(--red);
+    text-transform: uppercase;
+    letter-spacing: .01em;
+  }
+  h1 small { display: block; font-size: .5em; color: var(--green); margin-top: 6px; }
+  .event { margin: 14px 0 0; color: var(--muted); font-size: 1rem; }
+  .event strong { color: var(--ink); }
+
+  .goals {
+    list-style: none; padding: 0; margin: 0;
+    display: grid; grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(11, auto); grid-auto-flow: column;
+    border-top: 1px solid var(--line);
+  }
+  @media (max-width: 680px) { .goals { grid-template-columns: 1fr; grid-template-rows: none; grid-auto-flow: row; } }
+  .goal {
+    display: grid; grid-template-columns: 112px 1fr; align-items: center; gap: 14px;
+    padding: 14px 12px; border-bottom: 1px solid var(--line);
+  }
+  @media (min-width: 681px) { .goal:nth-child(-n+11) { border-right: 1px solid var(--line); } }
+  .amount {
+    font-family: "Anton", Impact, sans-serif; font-size: 1.9rem; color: var(--green);
+    text-align: right; font-variant-numeric: tabular-nums; line-height: 1;
+  }
+  .label { font-weight: 700; font-size: 1.02rem; line-height: 1.3; }
+  .goal.top { background: color-mix(in srgb, var(--red) 10%, transparent); }
+  .goal.top .amount { color: var(--red); }
+
+  .recurring {
+    margin-top: 28px; padding: 18px; border: 2px dashed var(--red); border-radius: 12px;
+    background: var(--paper-2);
+  }
+  .recurring h2 { margin: 0 0 10px; font-family: "Anton", Impact, sans-serif; font-weight: 400; text-transform: uppercase; color: var(--red); font-size: 1.4rem; letter-spacing: .02em; }
+  .recurring ul { list-style: none; margin: 0; padding: 0; display: grid; gap: 8px; }
+  .recurring li { display: grid; grid-template-columns: 112px 1fr; gap: 14px; align-items: baseline; }
+  .recurring .amount { color: var(--red); font-size: 1.3rem; }
+
+  footer { margin-top: 32px; text-align: center; color: var(--muted); font-size: .85rem; line-height: 1.6; }
+  footer .orgs { font-weight: 800; color: var(--ink); font-size: 1rem; }
+</style>
+</head>
+<body>
+<main>
+  <header>
+    <div class="flag" aria-hidden="true"><div class="b"><i></i><i></i><i></i></div></div>
+    <p class="tagline">Pour le peuple, par le peuple</p>
+    <h1>Khalenaa<small>Donations Goals</small></h1>
+    <p class="event">Live caritatif <strong>Live4Palestine</strong> × <strong>People of Gaza</strong></p>
+  </header>
+
+  <ol class="goals" id="goals"></ol>
+
+  <section class="recurring">
+    <h2>Goals récurrents</h2>
+    <ul>
+      <li><span class="amount">Tous les 15€</span><span class="label">Vous me posez une question sur moi</span></li>
+      <li><span class="amount">Tous les 100€</span><span class="label">Je fais une action du chat (réalisable)</span></li>
+    </ul>
+  </section>
+
+  <footer>
+    <div class="orgs">LIVE4PALESTINE · شعب غزة PEOPLE OF GAZA</div>
+    Page fan non officielle — goals repris du visuel de l'événement.
+  </footer>
+</main>
+<script>
+  const goals = [
+    [5, "J'allume ma caméra"],
+    [15, "Vous me posez une question sur moi (hors sexe et trop perso)"],
+    [35, "Soirée viewers"],
+    [50, "Mimic Party"],
+    [75, "Stream 24h (pendant l'évent)"],
+    [100, "Je fais une action du chat (réalisable)"],
+    [150, "Je fais la danse TikTok nya arigato"],
+    [200, "Je vous offre une carte 25€ Riot Points"],
+    [250, "Je vous offre un t-shirt du merch"],
+    [300, "Je m'engage à sortir 1 TT/jour à partir de décembre"],
+    [350, "Je vous offre une carte 25€ Riot Points"],
+    [400, "Stream IRL ReylowTv x MariUTv"],
+    [450, "Je fais un TikTok que le chat choisis"],
+    [500, "Marathon LoL en stream"],
+    [600, "Live IRL QG"],
+    [750, "Stream salle de sport feat. Shesheroine_"],
+    [1000, "Stream cosplay Akali + OTP"],
+    [1500, "Radio sexe"],
+    [2000, "Vidéo YouTube en Syrie"],
+    [2500, "J'écris un couplet de RAP et je pose en studio"],
+    [10000, "Face Reveal"],
+  ];
+  const fmt = new Intl.NumberFormat("fr-FR");
+  const list = document.getElementById("goals");
+  for (const [amount, label] of goals) {
+    const li = document.createElement("li");
+    li.className = "goal" + (amount === 10000 ? " top" : "");
+    const a = document.createElement("span");
+    a.className = "amount";
+    a.textContent = fmt.format(amount) + "€";
+    const l = document.createElement("span");
+    l.className = "label";
+    l.textContent = label;
+    li.append(a, l);
+    list.append(li);
+  }
+</script>
+</body>
+</html>
