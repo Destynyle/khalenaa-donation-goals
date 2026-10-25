@@ -50,6 +50,11 @@
   .flag .b i:nth-child(2) { background: #fff; }
   .flag .b i:nth-child(3) { background: #149954; }
   .flag::after { content: ""; position: absolute; left: 0; top: 0; bottom: 0; width: 45%; background: #e4312b; clip-path: polygon(0 0, 100% 50%, 0 100%); }
+  .photo {
+    display: block; width: min(240px, 60vw); aspect-ratio: 530 / 710; height: auto;
+    margin: 0 auto 18px; border-radius: 14px; object-fit: cover;
+    border: 4px solid var(--green); box-shadow: 0 8px 24px rgba(0,0,0,.25);
+  }
   .tagline { font-weight: 800; color: var(--green); letter-spacing: .02em; text-transform: uppercase; font-size: .85rem; margin: 0 0 6px; }
   h1 {
     font-family: "Anton", Impact, sans-serif;
@@ -102,6 +107,7 @@
 <main>
   <header>
     <div class="flag" aria-hidden="true"><div class="b"><i></i><i></i><i></i></div></div>
+    <img class="photo" src="khalenaa.jpg" width="530" height="710" alt="Khalenaa, casquette noire et maillot rouge, le visage à moitié caché par sa main">
     <p class="tagline">Pour le peuple, par le peuple</p>
     <h1>Khalenaa<small>Donations Goals</small></h1>
     <p class="event">Live caritatif <strong>Live4Palestine</strong> × <strong>People of Gaza</strong></p>
